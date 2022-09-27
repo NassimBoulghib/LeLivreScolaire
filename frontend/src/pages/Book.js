@@ -28,7 +28,7 @@ const Book = () => {
     return (
         <div>
             <Navbar />
-            <div className="lg:container mx-auto p-3">
+            <div className="lg:container mx-auto px-3 py-6">
                 <div className="flex flex-col sm:flex-row flex-grow-0 flex-shrink-0 items-stretch justify-start flex-wrap">
                     <div className="relative w-full flex items-center justify-center sm:block sm:w-1/2 lg:w-1/3 flex-grow-0 flex-shrink-0 sm:basis-1/2 lg:basis-1/3 right-auto left-auto">
                         <img

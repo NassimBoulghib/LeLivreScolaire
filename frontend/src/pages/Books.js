@@ -19,7 +19,7 @@ const Books = () => {
 
     console.log("books", books);
     return (
-        <div className="bg-slate-50">
+        <div>
             <Navbar />
             <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 py-6 lg:container px-3 mx-auto">
                 {books.map((book) => (

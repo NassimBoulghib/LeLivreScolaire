@@ -8,7 +8,9 @@ const Navbar = () => {
         <header className="w-full bg-white shadow">
             <nav className="flex items-center justify-between flex-wrap lg:container px-3 py-4 mx-auto">
                 <div className="flex items-center flex-shrink-0 text-white">
-                    <img className="w-44" src={logo} alt="logo" />
+                    <a href="/">
+                        <img className="w-44" src={logo} alt="logo" />
+                    </a>
                 </div>
                 <div className="md:hidden">
                     <button
