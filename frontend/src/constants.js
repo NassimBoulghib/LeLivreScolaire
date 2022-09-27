@@ -56,3 +56,38 @@ query book($ids: [Int]) {
   }
 }
 `;
+
+export const GET_SUBJETCS_QUERY = `
+query subjects($ids: [Int]) {
+  viewer {
+    subjects(ids: $ids) {
+      hits {
+        name
+        url
+        slug
+        id
+      }
+    }
+  }
+}`;
+
+export const GET_SUBJECTS_FROM_BOOK = `
+query subjects($subjectIds: [Int]) {
+  viewer {
+    books(subjectIds: $subjectIds) {
+      hits {
+        displayTitle
+        valid
+        year
+        subjects {
+          name
+          color
+          primaryColor
+          lightcolor
+          darkcolor
+          url
+        }
+      }
+    }
+  }
+}`;
