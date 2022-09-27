@@ -47,12 +47,12 @@ const Books = () => {
 
                                     <button
                                         type="button"
-                                        className={`flex items-center space-x-4 px-6 py-2.5 bg-[${book.subjects[0]?.color}] text-white font-medium text-xs leading-tight rounded shadow-md`}
+                                        className={`flex items-center space-x-4 px-6 py-2.5 bg-[${book.subjects[0]?.color}] text-black font-medium text-xs leading-tight rounded shadow-md`}
                                     >
                                         {book.valid ? (
                                             <>
                                                 <AiFillEye
-                                                    color="white"
+                                                    color="black"
                                                     size={20}
                                                 />
                                                 <span>Voir le manuel</span>
@@ -60,7 +60,7 @@ const Books = () => {
                                         ) : (
                                             <>
                                                 <AiFillEyeInvisible
-                                                    color="white"
+                                                    color="black"
                                                     size={20}
                                                 />
                                                 <span>Manuel indisponible</span>
