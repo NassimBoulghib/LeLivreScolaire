@@ -71,6 +71,16 @@ query subjects($ids: [Int]) {
   }
 }`;
 
+export const GET_LEVELS_QUERY = `
+query levels {
+  viewer {
+    levels {
+      name
+    }
+  }
+}
+`;
+
 export const GET_SUBJECTS_FROM_BOOK = `
 query subjects($subjectIds: [Int]) {
   viewer {
@@ -82,6 +92,7 @@ query subjects($subjectIds: [Int]) {
         valid
         year
         subjects {
+          name
           color
           primaryColor
           lightcolor

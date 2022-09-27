@@ -19,7 +19,7 @@ const Chapters = ({ id }) => {
     }, [id]);
 
     chapters.sort((a, b) => a.number - b.number);
-    console.log("chapters", chapters);
+    // console.log("chapters", chapters);
 
     return (
         <>

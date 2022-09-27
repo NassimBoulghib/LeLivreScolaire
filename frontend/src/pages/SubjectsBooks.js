@@ -9,7 +9,7 @@ import Navbar from "../components/Navbar";
 const SubjectsBooks = () => {
     const { state } = useLocation();
 
-    console.log("state", state);
+    // console.log("state", state);
 
     const [books, setBooks] = useState([]);
 
@@ -26,7 +26,7 @@ const SubjectsBooks = () => {
         fetchBooks();
     }, [state.id]);
 
-    console.log("books", books);
+    // console.log("books", books);
 
     return (
         <div>

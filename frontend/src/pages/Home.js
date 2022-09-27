@@ -30,7 +30,7 @@ const Home = () => {
     }, []);
 
     subjects.sort((a, b) => a.id - b.id);
-    console.log("subjects", subjects);
+    // console.log("subjects", subjects);
 
     return (
         <div>
