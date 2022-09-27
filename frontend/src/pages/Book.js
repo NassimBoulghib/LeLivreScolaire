@@ -24,7 +24,7 @@ const Book = () => {
         fetchBook();
     }, [id]);
 
-    console.log("book", book);
+    // console.log("book", book);
 
     return (
         <div>
