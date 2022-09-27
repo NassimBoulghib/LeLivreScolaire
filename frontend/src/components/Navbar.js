@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
@@ -30,7 +31,12 @@ const Navbar = () => {
                     }`}
                 >
                     <div className="text-sm md:flex-grow">
-                        <span className="peer">Manuel numérique</span>
+                        <Link
+                            to={"/books"}
+                            className="hover:bg-blue-50 p-4 text-lg duration-[250ms] rounded-lg"
+                        >
+                            Manuels numériques
+                        </Link>
                     </div>
                 </div>
             </nav>

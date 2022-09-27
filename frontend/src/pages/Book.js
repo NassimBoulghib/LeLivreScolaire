@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import { AiFillEye } from "react-icons/ai";
 import axios from "axios";
 import { GET_BOOK_QUERY, GRAPHQL_API_URL } from "../constants";
+import Chapters from "../components/Chapters";
 
 const Book = () => {
     const { id } = useParams();
@@ -54,6 +55,9 @@ const Book = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="bg-blue-50">
+                <Chapters id={id} />
             </div>
         </div>
     );
