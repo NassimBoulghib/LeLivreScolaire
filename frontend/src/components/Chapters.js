@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { GRAPHQL_API_URL, GET_CHAPTERS_FROM_BOOK } from "../constants";
+import Loading from "./Loading";
 
 const Chapters = ({ id }) => {
     const [chapters, setChapters] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const fetchChapters = async () => {
+            setLoading(true);
             const response = await axios.post(GRAPHQL_API_URL, {
                 query: GET_CHAPTERS_FROM_BOOK,
                 variables: {
@@ -14,12 +17,17 @@ const Chapters = ({ id }) => {
                 },
             });
             setChapters(response.data.data.viewer.chapters.hits);
+            setLoading(false);
         };
         fetchChapters();
     }, [id]);
 
     chapters.sort((a, b) => a.number - b.number);
     // console.log("chapters", chapters);
+
+    if (loading) {
+        return <Loading />;
+    }
 
     return (
         <>
