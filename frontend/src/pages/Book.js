@@ -37,7 +37,7 @@ const Book = () => {
                             alt="cover book"
                         />
                     </div>
-                    <div className="relative sm:w-1/2 lg:w-2/3 flex-grow-0 flex-shrink-0 sm:basis-1/2 lg:basis-2/3 sm:pl-3 right-auto left-auto flex flex-col justify-between">
+                    <div className="relative sm:w-1/2 lg:w-2/3 flex-grow-0 flex-shrink-0 sm:basis-1/2 lg:basis-2/3 sm:pl-3 right-auto left-auto flex flex-col justify-between py-10">
                         <div className="flex justify-center items-center flex-col sm:justify-start sm:items-start space-y-4 pt-3 pb-5">
                             <h1 className="text-3xl">{book.displayTitle}</h1>
                             <h2 className="text-slate-400 uppercase">
@@ -46,9 +46,9 @@ const Book = () => {
                         </div>
                         <div>
                             <button
-                                className={`relative top-0 hover:-top-1 transition-all inline-flex justify-center items-center w-full sm:w-1/2 p-2 space-x-2 text-white font-medium text-xs leading-tight rounded shadow-md bg-[${book.subjects?.[0].color}]`}
+                                className={`relative top-0 hover:-top-1 transition-all inline-flex justify-center items-center w-full sm:w-1/2 p-2 space-x-2 text-black font-medium text-xs leading-tight rounded shadow-md bg-[${book.subjects?.[0].color}]`}
                             >
-                                <AiFillEye size={20} color="white" />
+                                <AiFillEye size={20} color="black" />
                                 <span>Manuel numérique</span>
                             </button>
                         </div>

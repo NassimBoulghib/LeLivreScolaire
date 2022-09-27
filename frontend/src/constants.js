@@ -76,11 +76,12 @@ query subjects($subjectIds: [Int]) {
   viewer {
     books(subjectIds: $subjectIds) {
       hits {
+        id
+        url
         displayTitle
         valid
         year
         subjects {
-          name
           color
           primaryColor
           lightcolor
