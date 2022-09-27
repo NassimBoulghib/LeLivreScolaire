@@ -3,6 +3,7 @@ import axios from "axios";
 import { GRAPHQL_API_URL, GET_SUBJETCS_QUERY } from "../constants";
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
+import Loading from "../components/Loading";
 
 const Home = () => {
     const navigate = useNavigate();
@@ -12,9 +13,11 @@ const Home = () => {
     };
 
     const [subjects, setSubjects] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const fetchSubjects = async () => {
+            setLoading(true);
             const response = await axios.post(GRAPHQL_API_URL, {
                 query: GET_SUBJETCS_QUERY,
                 variables: {
@@ -25,12 +28,17 @@ const Home = () => {
                 },
             });
             setSubjects(response.data.data.viewer.subjects.hits);
+            setLoading(false);
         };
         fetchSubjects();
     }, []);
 
     subjects.sort((a, b) => a.id - b.id);
     // console.log("subjects", subjects);
+
+    if (loading) {
+        return <Loading />;
+    }
 
     return (
         <div>

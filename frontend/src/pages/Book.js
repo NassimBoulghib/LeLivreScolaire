@@ -5,14 +5,17 @@ import { AiFillEye } from "react-icons/ai";
 import axios from "axios";
 import { GET_BOOK_QUERY, GRAPHQL_API_URL } from "../constants";
 import Chapters from "../components/Chapters";
+import Loading from "../components/Loading";
 
 const Book = () => {
     const { id } = useParams();
 
     const [book, setBook] = useState({});
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const fetchBook = async () => {
+            setLoading(true);
             const response = await axios.post(GRAPHQL_API_URL, {
                 query: GET_BOOK_QUERY,
                 variables: {
@@ -20,11 +23,16 @@ const Book = () => {
                 },
             });
             setBook(response.data.data.viewer.books.hits[0]);
+            setLoading(false);
         };
         fetchBook();
     }, [id]);
 
     // console.log("book", book);
+
+    if (loading) {
+        return <Loading />;
+    }
 
     return (
         <div>

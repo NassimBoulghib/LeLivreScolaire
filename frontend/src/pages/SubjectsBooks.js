@@ -5,6 +5,7 @@ import { GRAPHQL_API_URL, GET_SUBJECTS_FROM_BOOK } from "../constants";
 import NoCover from "../assets/nocover.jpg";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import Navbar from "../components/Navbar";
+import Loading from "../components/Loading";
 
 const SubjectsBooks = () => {
     const { state } = useLocation();
@@ -12,9 +13,11 @@ const SubjectsBooks = () => {
     // console.log("state", state);
 
     const [books, setBooks] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const fetchBooks = async () => {
+            setLoading(true);
             const response = await axios.post(GRAPHQL_API_URL, {
                 query: GET_SUBJECTS_FROM_BOOK,
                 variables: {
@@ -22,11 +25,16 @@ const SubjectsBooks = () => {
                 },
             });
             setBooks(response.data.data.viewer.books.hits);
+            setLoading(false);
         };
         fetchBooks();
     }, [state.id]);
 
     // console.log("books", books);
+
+    if (loading) {
+        return <Loading />;
+    }
 
     return (
         <div>
